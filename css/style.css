@@ -1,0 +1,78 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Menu hambúrguer com degradê clínico */
+.menu {
+  background: linear-gradient(to right, #b2e6f2, #a5e9c3);
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu__toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu__toggle span {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.menu__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu__list li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Rodapé com degradê invertido */
+.footer {
+  background: linear-gradient(to right, #a5e9c3, #b2e6f2);
+  color: #111;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Responsividade Mobile First */
+@media (max-width: 768px) {
+  .menu__toggle {
+    display: flex;
+  }
+  .menu__list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(to right, #b2e6f2, #a5e9c3);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 10px;
+  }
+  .menu__list--active {
+    display: flex;
+  }
+  .menu__list li {
+    margin: 10px 0;
+  }
+}
